@@ -18,7 +18,7 @@ NUMERIC_COLUMNS = [
 ]
 
 CATEGORICAL_COLUMNS = [
-    "Home Away",
+    "Home/Away",
     "Pitch Condition",
     "Weather"
 ]

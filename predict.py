@@ -12,7 +12,7 @@ NUMERIC_COLUMNS = [
 ]
 
 CATEGORICAL_COLUMNS = [
-    "Home Away",
+    "Home/Away",
     "Pitch Condition",
     "Weather"
 ]
@@ -37,7 +37,7 @@ def predict_score(
         "Overs Played": overs_played,
         "Wickets Lost": wickets_lost,
         "Run Rate": run_rate,
-        "Home Away": home_away,
+        "Home/Away": home_away,
         "Opponent Strength": opponent_strength,
         "Pitch Condition": pitch_condition,
         "Weather": weather
@@ -58,9 +58,9 @@ if __name__ == "__main__":
         overs_played=7,
         wickets_lost=1,
         run_rate=11.04,
-        home_away="Away",
+        home_away="Home",
         opponent_strength=3,
-        pitch_condition="Bowling",
+        pitch_condition="Batting",
         weather="Sunny"
     )
 
