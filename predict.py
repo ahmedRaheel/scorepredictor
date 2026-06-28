@@ -4,7 +4,6 @@ import tensorflow as tf
 
 
 NUMERIC_COLUMNS = [
-    "Match ID",
     "Overs Played",
     "Wickets Lost",
     "Run Rate",
@@ -22,8 +21,7 @@ model = tf.keras.models.load_model("models/score_model.keras")
 preprocessor = joblib.load("models/score_preprocessor.pkl")
 
 
-def predict_score(
-    match_id,
+def predict_score(   
     overs_played,
     wickets_lost,
     run_rate,
@@ -33,7 +31,6 @@ def predict_score(
     weather
 ):
     row = pd.DataFrame([{
-        "Match ID": match_id,
         "Overs Played": overs_played,
         "Wickets Lost": wickets_lost,
         "Run Rate": run_rate,
@@ -54,12 +51,11 @@ def predict_score(
 
 if __name__ == "__main__":
     score = predict_score(
-        match_id=1,
         overs_played=7,
         wickets_lost=1,
         run_rate=11.04,
         home_away="Home",
-        opponent_strength=3,
+        opponent_strength=9,
         pitch_condition="Batting",
         weather="Sunny"
     )

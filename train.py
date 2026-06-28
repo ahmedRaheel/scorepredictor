@@ -10,7 +10,6 @@ from sklearn.pipeline import Pipeline
 
 
 NUMERIC_COLUMNS = [
-    "Match ID",
     "Overs Played",
     "Wickets Lost",
     "Run Rate",
@@ -30,6 +29,7 @@ def train():
     os.makedirs("models", exist_ok=True)
 
     df = pd.read_csv("data/score.csv")
+    df.drop(columns=["Match ID"], inplace=True)
 
     X = df[NUMERIC_COLUMNS + CATEGORICAL_COLUMNS]
     y = df[TARGET_COLUMN]

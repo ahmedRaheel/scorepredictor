@@ -23,7 +23,7 @@ class ScoreRequest(BaseModel):
 @app.post("/predict")
 def predict(request: ScoreRequest):
 
-    predicted_score = predict_score(request.match_id, 
+    predicted_score = predict_score(
                                     request.overs_played,
                                     request.wickets_lost,
                                     request.run_rate,
